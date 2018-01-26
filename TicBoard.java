@@ -72,7 +72,7 @@ public static int [] 		choice = new int[3];
 	
 
 	public static boolean checkWinnerZ(char currentPlayer)
-	{
+	{			//Z +1, X = X, Y = Y
 		boolean ZResult = false;
 		int winCondition=0;
 		int z 	= choice[0];
@@ -97,7 +97,7 @@ public static int [] 		choice = new int[3];
 	}//end checkWinnerZ()
 	
 	public static boolean checkWinnerX(char currentPlayer)
-	{
+	{			//Z = Z, X +1, Y = Y
 		boolean XResult = false;
 		int winCondition=0;
 		int z 	= choice[0];
@@ -122,7 +122,7 @@ public static int [] 		choice = new int[3];
 	}//end checkWinnerX()
 	
 	public static boolean checkWinnerY(char currentPlayer)
-	{
+	{			//Z = Z, X = X, Y +1
 		boolean YResult = false;
 		int winCondition=0;
 		int z 	= choice[0];
@@ -147,7 +147,7 @@ public static int [] 		choice = new int[3];
 	}//end checkWinnerY()
 	
 	public static boolean checkWinnerD(char currentPlayer)
-	{
+	{			//Z = Z, X +1, Y +1
 		boolean DResult = false;
 		int winCondition=0;
 		int z 	= choice[0];
@@ -172,7 +172,7 @@ public static int [] 		choice = new int[3];
 	}//end checkWinnerD()
 	
 	public static boolean checkWinnerU(char currentPlayer)
-	{
+	{			//Z = Z, X +1, Y -1
 		boolean UResult = false;
 		int winCondition=0;
 		int z 	= choice[0];
@@ -197,7 +197,7 @@ public static int [] 		choice = new int[3];
 	}//end checkWinnerU()
 	
 	public static boolean checkWinnerDD(char currentPlayer)
-	{
+	{			//Z +1, X +1, Y +1
 		boolean DDResult = false;
 		int winCondition=0;
 		int z 	= choice[0];
@@ -208,7 +208,7 @@ public static int [] 		choice = new int[3];
 		for (int i=0; i<plane;i++) {
 			if (board[i][i][i] == currentPlayer) {
 				winCondition++;
-				System.out.printf("(%d,%d,%d): %d%n", z+1, i+1, i+1, winCondition);
+				System.out.printf("(%d,%d,%d): %d%n", i+1, i+1, i+1, winCondition);
 				if (winCondition == plane) {
 					DDResult = true;
 					break;
@@ -222,7 +222,7 @@ public static int [] 		choice = new int[3];
 	}//end checkWinnerDD()
 	
 	public static boolean checkWinnerDU(char currentPlayer)
-	{
+	{			//Z +1, X +1, Y -1
 		boolean DUResult = false;
 		int winCondition=0;
 		int z 	= choice[0];
@@ -247,7 +247,7 @@ public static int [] 		choice = new int[3];
 	}//end checkWinnerDU()
 	
 	public static boolean checkWinnerXD(char currentPlayer)
-	{
+	{			//Z +1, X = X, Y +1
 		boolean XDResult = false;
 		int winCondition=0;
 		int z 	= choice[0];
@@ -272,7 +272,7 @@ public static int [] 		choice = new int[3];
 	}//end checkWinnerXD()
 	
 	public static boolean checkWinnerXU(char currentPlayer)
-	{
+	{			//Z +1, X = X, Y -1
 		boolean XUResult = false;
 		int winCondition=0;
 		int z 	= choice[0];
