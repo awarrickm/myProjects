@@ -6,3 +6,12 @@ Hello!
   repository to hold and show my programs I make to practice. I prefer 
   using C# for no other reason than I seem to understand it more easily 
   than Java. 
+
+Code Groupings() {
+
+  game 3dTicTacToe() {
+    AaronThreeTic.Java
+    TicBoard.Java
+    }
+    
+  }
