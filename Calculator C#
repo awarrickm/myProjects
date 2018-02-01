@@ -1,0 +1,159 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CalculatorProject
+{
+    public partial class Form1 : Form
+    {
+        string opValue="";
+        string firstNum="";
+        double n1;
+        string secondNum;
+        double n2;
+        string memory = "";
+        string buttonValue="";
+        string solveLabel = "0";
+
+        public void clearLabel()
+        {
+            firstNum = "";
+            secondNum = "";
+            opValue = "";
+            solveLabel = "0";
+            buttonValue = "0";
+        }
+
+        public void updateLabel()
+        {
+            if (firstNum == "")
+            {
+                if (solveLabel == "0")
+                {
+                    solveLabel = buttonValue;
+                }
+                else
+                {
+                    solveLabel = solveLabel + buttonValue;
+                }
+                lblSolve.Text = solveLabel;               
+            }
+            else
+            {
+                solveLabel = solveLabel + buttonValue;
+                lblSolve.Text = firstNum + opValue + solveLabel;
+            }
+            lblCurrent.Text = solveLabel;
+        }
+        //MAIN//
+        public Form1()
+        {
+            InitializeComponent();
+            lblSolve.Text = solveLabel;
+            lblCurrent.Text = solveLabel;
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            buttonValue = button.Text;
+            updateLabel();
+        }
+
+        private void Operate_Click(object sender, EventArgs e)
+        {
+            if (opValue == "")
+            {
+                firstNum = solveLabel;
+                solveLabel = "";
+                n1 = Double.Parse(firstNum);
+            }
+                Button button = (Button)sender;
+                opValue = "";
+                opValue = button.Text;
+                buttonValue = "";
+                updateLabel();
+                lblCurrent.Text = firstNum;
+        }
+
+        private void btnEqu_Click(object sender, EventArgs e)
+        {
+            secondNum = solveLabel;
+            n2 = Double.Parse(secondNum);
+            if (opValue == "+")
+                lblSolve.Text = Convert.ToString(n1 + n2);
+            else if (opValue == "-")
+                lblSolve.Text = Convert.ToString(n1 - n2);
+            else if (opValue == "/")
+                lblSolve.Text = Convert.ToString(n1 / n2);
+            else if (opValue == "*")
+                lblSolve.Text = Convert.ToString(n1 * n2);
+            clearLabel();
+            solveLabel = lblSolve.Text;
+            lblCurrent.Text = solveLabel;
+        }
+
+        private void Decimal_Click(object sender, EventArgs e)
+        {
+            if (solveLabel.Contains(".") == false)
+            {
+                Button button = (Button)sender;
+                buttonValue = button.Text;
+                updateLabel();
+            }
+        }
+
+        private void PN_Click(object sender, EventArgs e)
+        {
+            double tempNum = Convert.ToDouble(solveLabel);
+            tempNum = tempNum * -1;
+            solveLabel = Convert.ToString(tempNum);
+            buttonValue = "";
+            updateLabel();
+        }
+
+        private void ClearAll_Click(object sender, EventArgs e)
+        {
+            clearLabel();
+            updateLabel();
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            if (lblSolve.Text == "0")
+            {
+                solveLabel = "0";
+            }
+            else
+            {
+                solveLabel = "";
+                buttonValue = "";
+                updateLabel();
+            }        
+        }
+
+        private void Memory_Click(object sender, EventArgs e)
+        {
+            if (memory == "")
+                memory = solveLabel;
+            else
+            {
+                solveLabel = "";
+                solveLabel = memory;
+                buttonValue = "";
+                updateLabel();
+            }
+        }
+
+        private void MemoryClear_Click(object sender, EventArgs e)
+        {
+            memory = "";
+        }
+    }
+}
