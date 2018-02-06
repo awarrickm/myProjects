@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.*?>
+
+<GridPane gridLinesVisible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="360.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.CalcController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Label alignment="CENTER" contentDisplay="RIGHT" prefWidth="272.0" text="CIS319 Calculator" textAlignment="LEFT" textFill="#cc0000" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0">
+      <font>
+        <Font name="System Bold" size="24.0" />
+      </font>
+    </Label>
+    <Button fx:id="MemoryClearBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#memoryClearButtonPressed" pickOnBounds="true" prefHeight="60.0" prefWidth="90.0" rotate="0.0" text="MC" GridPane.columnIndex="0" GridPane.rowIndex="2">
+      <GridPane.margin>
+        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" fx:id="x1" />
+      </GridPane.margin>
+    </Button>
+    <Button fx:id="MemoryRecallBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#memoryRecallButtonPressed" prefHeight="60.0" prefWidth="90.0" text="MR" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="2" />
+    <Button fx:id="MemoryAddBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#memoryAddButtonPressed" prefHeight="60.0" prefWidth="90.0" text="M+" GridPane.columnIndex="2" GridPane.margin="$x1" GridPane.rowIndex="2" />
+    <Button fx:id="DivideBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operationButtonPressed" prefHeight="60.0" prefWidth="90.0" text="/" GridPane.columnIndex="3" GridPane.margin="$x1" GridPane.rowIndex="2" />
+    <Button fx:id="ClearBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clearButtonPressed" prefHeight="60.0" prefWidth="90.0" text="C" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="3" />
+    <Button fx:id="ClearEntryBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clearEntryButtonPressed" prefHeight="60.0" prefWidth="90.0" text="CE" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="3" />
+    <Button fx:id="PositiveNegativeBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#posNegButtonPressed" prefHeight="60.0" prefWidth="90.0" text="+/-" GridPane.columnIndex="2" GridPane.margin="$x1" GridPane.rowIndex="3" />
+    <Button fx:id="MultiplyBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operationButtonPressed" prefHeight="60.0" prefWidth="90.0" text="*" GridPane.columnIndex="3" GridPane.margin="$x1" GridPane.rowIndex="3" />
+    <Button fx:id="SevenBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#digitButtonPressed" prefHeight="60.0" prefWidth="90.0" text="7" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="4" />
+    <Button fx:id="EightBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#digitButtonPressed" prefHeight="60.0" prefWidth="90.0" text="8" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="4" />
+    <Button fx:id="NineBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#digitButtonPressed" prefHeight="60.0" prefWidth="90.0" text="9" GridPane.columnIndex="2" GridPane.margin="$x1" GridPane.rowIndex="4" />
+    <Button fx:id="SubtractBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operationButtonPressed" prefHeight="60.0" prefWidth="90.0" text="-" GridPane.columnIndex="3" GridPane.margin="$x1" GridPane.rowIndex="4" />
+    <Button fx:id="FourBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#digitButtonPressed" prefHeight="60.0" prefWidth="90.0" text="4" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="5" />
+    <Button fx:id="FiveBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#digitButtonPressed" prefHeight="60.0" prefWidth="90.0" text="5" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="5" />
+    <Button fx:id="SixBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#digitButtonPressed" prefHeight="60.0" prefWidth="90.0" text="6" GridPane.columnIndex="2" GridPane.margin="$x1" GridPane.rowIndex="5" />
+    <Button fx:id="AddBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#operationButtonPressed" prefHeight="60.0" prefWidth="90.0" text="+" GridPane.columnIndex="3" GridPane.margin="$x1" GridPane.rowIndex="5" />
+    <Button fx:id="OneBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#digitButtonPressed" prefHeight="60.0" prefWidth="90.0" text="1" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="6" />
+    <Button fx:id="TwoBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#digitButtonPressed" prefHeight="60.0" prefWidth="90.0" text="2" GridPane.columnIndex="1" GridPane.margin="$x1" GridPane.rowIndex="6" />
+    <Button fx:id="ThreeBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#digitButtonPressed" prefHeight="60.0" prefWidth="90.0" text="3" GridPane.columnIndex="2" GridPane.margin="$x1" GridPane.rowIndex="6" />
+    <Button fx:id="DecimalBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#digitButtonPressed" prefHeight="60.0" prefWidth="90.0" text="." GridPane.columnIndex="2" GridPane.margin="$x1" GridPane.rowIndex="7" />
+    <Button fx:id="EqualsBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#equalsButtonPressed" prefHeight="120.0" prefWidth="90.0" text="=" GridPane.columnIndex="3" GridPane.margin="$x1" GridPane.rowIndex="6" GridPane.rowSpan="2" />
+    <Button fx:id="ZeroBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#digitButtonPressed" prefHeight="60.0" prefWidth="180.0" text="0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.margin="$x1" GridPane.rowIndex="7" />
+    <Label fx:id="CurrentNumberLbl" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefWidth="332.0" style=".CurrentNumberLbl &#10;{&#10;background-color: blue;&#10;}" text="0" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+      <font>
+        <Font size="16.0" />
+      </font>
+      <GridPane.margin>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </GridPane.margin>
+    </Label>
+  </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="89.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="90.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.0" minWidth="10.0" prefWidth="94.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="87.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+</GridPane>
