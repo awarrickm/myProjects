@@ -15,7 +15,7 @@ Code Groupings() {
     }
     
     project CalculatorCS() {
-      Calculator C#
+      CalculatorC#.cs
     }
     
     project CalculatorJava() {
